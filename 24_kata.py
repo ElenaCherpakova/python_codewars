@@ -9,11 +9,9 @@
 # On 12-hours clock, there is no 0 hour, and time just after midnight is denoted as, for example, 12:15 am. On 24-hour clock, this translates to 0015.
 
 def to24hourtime(hour, minute, period):
-    if period == 'am':
-        if hour == 12:
+    if period == 'am' and hour == 12:
             hour = 0
-    elif period == 'pm':
-        if hour != 12:
+    elif period == 'pm' and hour != 12:
             hour += 12
     return str(hour).zfill(2) + str(minute).zfill(2)
 
